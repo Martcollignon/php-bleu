@@ -82,7 +82,7 @@ if(count($_POST)>0){
 	
 	if($erreur == false){
 		$result = mail( 'martincollignon@gmail.com', $sujet, $message);
-		mail( '$email', 'Formulaire pour devenir un bleu', $message)
+		mail( '$email', 'Formulaire pour devenir un bleu', $message);
 		
 		if($result){
 			echo "<div class='alert alert-dismissible alert-success'> Le formulaire à bien été envoyé! Merci de ta participation et à bien vite!</div>";
@@ -114,21 +114,21 @@ include('header.php');
 				<div class="form-group">
 					<label class="col-lg-2 control-label" for="nom">Nom & prénom <div class="text-danger">*</div></label>
 					<div class="col-lg-10">
-						<input type="text" name="nom" class="form-control" />
+						<input type="text" name="nom" class="form-control" value="<?php if (isset($_POST['nom'])){echo $_POST['nom'];} ?>" />
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label for="email" class="col-lg-2 control-label">Email <div class="text-danger">*</div></label>
 					<div class="col-lg-10">
-						<input type="text" name="email" class="form-control" />
+						<input type="text" name="email" class="form-control" value="<?php if (isset($_POST['email'])){echo $_POST['email'];} ?>" />
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label for="naissance" class="col-lg-2 control-label">Date de naissance <div class="text-danger">*</div></label>
 					<div class="col-lg-10">
-						<input type="date" name="naissance" class="form-control" />
+						<input type="date" name="naissance" class="form-control" value="<?php if (isset($_POST['naissance'])){echo $_POST['naissance'];} ?>" />
 					</div>
 				</div>
 				
@@ -142,12 +142,12 @@ include('header.php');
 				<div class="form-group">
 					<label for="adresse" class="col-lg-2 control-label">Adresse</label>
 					<div class="col-lg-4">
-						<textarea name="adresse" class="form-control" rows="1"></textarea>
+						<textarea name="adresse" class="form-control" rows="1" value="<?php if (isset($_POST['adresse'])){echo $_POST['adresse'];} ?>" ></textarea>
 					</div>
 					
 					<label for="ville" class="col-lg-2 control-label">Ville</label>
 					<div class="col-lg-4">
-						<input type="text" name="ville"  class="form-control" />
+						<input type="text" name="ville"  class="form-control" value="<?php if (isset($_POST['ville'])){echo $_POST['ville'];} ?>" />
 					</div>
 				</div>
 				
@@ -155,7 +155,7 @@ include('header.php');
 				<div class="form-group">
 					<label for="commune" class="col-lg-2 control-label">Commune</label>
 					<div class="col-lg-10">
-						<input type="text" name="commune" class="form-control" />
+						<input type="text" name="commune" class="form-control" value="<?php if (isset($_POST['commune'])){echo $_POST['commune'];} ?>" />
 					</div>
 				</div>
 				
@@ -181,7 +181,7 @@ include('header.php');
 				<div class="form-group">
 			    	<div class="col-lg-10 col-lg-offset-2">
 						<input type="submit" name="submit" class="btn btn-default btn-primary" value="Envoyer" />
-						<a href="https://github.com/Martcollignon/php-bleu/blob/master/index.php" class="btn btn-delfault">Lien github</a>
+						<a href="https://github.com/Martcollignon/php-bleu/blob/master/index.php" target="_blank" class="btn btn-delfault">Lien github</a>
 			    	</div>
 				</div>
 			</form>
